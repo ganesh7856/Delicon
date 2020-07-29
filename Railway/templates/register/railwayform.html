@@ -1,0 +1,22 @@
+{%extends 'register/home.html'%}
+{%load crispy_forms_tags%}
+    {% block content %}
+        <head>
+            <meta charset="UTF-8">
+            <title>Ticket Booking</title>
+        </head>
+        <body>
+
+            <h1> Ticket Booking Form</h1>
+           <form method="POST">
+               {% csrf_token %}
+               {{Rform|crispy}}
+               <br>
+               <input type="submit" class="btn btn-success">
+
+           </form>
+
+
+        </body>
+        </html>
+    {% endblock %}

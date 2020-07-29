@@ -1,0 +1,26 @@
+{%extends 'register/home.html'%}
+{%load crispy_forms_tags%}
+    {% block content %}
+
+        <h1>Update User Information</h1>
+        <form  method="post">
+           {% csrf_token %}
+           User ID <input type="text" name="no" value="{{register.id}}"><br><br>
+           User Name <input type="text" name="name" value="{{register.name}}"><br><br>
+           User Address <input type="text" name="address" value="{{register.address}}"><br><br>
+           User DOB <input type="text" name="bod" value="{{register.bod}}"><br><br>
+           User Email <input type="text" name="email" value="{{register.email}}"><br><br>
+           User Train_Name <input type="text" name="trainname" value="{{register.train_name}}"><br><br>
+            User Journey To <input type="text" name="journeyto" value="{{register.journeyto}}"><br><br>
+            User Journey From <input type="text" name="journeyfrom" value="{{register.journeyfrom}}"><br><br>
+
+           <input type="submit" name="" value="Update User Record">
+
+             <div class="border-top pt-3">
+                     <small class="text-muted">
+                     To See Reservations click here... <a class="ml-2" href="{% url 'list'  %}">User List </a>
+                     </small>
+             </div>
+
+
+ {% endblock %}

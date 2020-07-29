@@ -1,0 +1,35 @@
+{%extends 'register/home.html'%}
+     {% block content %}
+    <h1>List of Users</h1>
+
+    <table border="3">
+        <th>User ID</th>
+        <th>User Name</th>
+        <th>User Address</th>
+        <th>User DOB</th>
+        <th>User Email Address</th>
+        <th>User Train Name</th>
+        <th>User Journey To</th>
+        <th>User Journey From</th>
+        <th>Actions</th>
+      {% for user in RailwayUserList %}
+       <tr>
+            <td>{{user.id}}</td>
+            <td>{{user.name|title}}</td>
+            <td>{{user.address|title}}</td>
+            <td>{{user.bod|title}}</td>
+            <td>{{user.email}}</td>
+            <td>{{user.train_name|title}}</td>
+            <td>{{user.journeyto}}</td>-<td>{{user.journeyfrom}}</td>
+
+            <td><a href="/update/{{user.id}}">Update</a> <a href="/delete/{{user.id}}">Delete</a></td>
+            {% endfor %}
+       </tr>
+    </table>
+    <div class="border-top pt-3">
+                 <small class="text-muted">
+                     To Create New User Click Here.. <a class="ml-2" href="{% url 'create' %}">Create New User</a>
+                 </small>
+             </div>
+
+     {% endblock %}
